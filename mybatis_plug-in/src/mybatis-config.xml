@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <settings>
+        <!--指定log4j作为日志输出-->
+        <setting name="logImpl" value="LOG4J"/>
+        <!--配置数据库下划线对应的驼峰命名法，默认为false-->
+        <setting name="mapUnderscoreToCamelCase" value="false"/>
+    </settings>
+
+    <environments default="mysql">
+        <environment id="mysql">
+            <transactionManager type="JDBC"/>
+            <dataSource type="UNPOOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/?serverTimezone=UTC"/>
+                <property name="username" value="root"/>
+                <property name="password" value="123456mysql"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <!--<mapper resource="domain/ActorMapper.xml"/>-->
+    </mappers>
+</configuration>
